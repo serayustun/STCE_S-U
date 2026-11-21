@@ -1,0 +1,848 @@
+
+######## CELL 1 ########
+✓ Libraries loaded and Google Drive connected.
+
+######## CELL 5 ########
+✓ Helper functions loaded (data loading, noise injection)
+
+######## CELL 7 ########
+✓ Metrics calculation function loaded
+
+######## CELL 9 ########
+✓ Fast Causal Discovery loaded
+
+######## CELL 11 ########
+✓ Causal-DGS-SMOTE (Principled, No CV) loaded
+
+######## CELL 13 ########
+✓ Comparative experiment function loaded
+
+######## CELL 15 ########
+================================================================================
+EXPERIMENT STARTING... Total Datasets: 7
+================================================================================
+
+Running: ecoli2.dat (Original) | Shape: (336, 7)
+
+========================================================================================================================
+  Dataset: ecoli2.dat (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.7368, G-Mean=0.8903
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.7000, G-Mean=0.8787
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.6829, G-Mean=0.8728
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.333 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 163/163 samples in 2.1s
+             Rejected: 0 (quality control)
+✓ F1=0.7368, G-Mean=0.8903
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.8750 |   0.8750 |   0.8750 |      0.8750 |     +0.00% |     +0.00% |     +0.00%
+Precision  |   0.6364 |   0.5833 |   0.5600 |      0.6364 |     +0.00% |     +9.09% |    +13.64%
+F1         |   0.7368 |   0.7000 |   0.6829 |      0.7368 |     +0.00% |     +5.26% |     +7.89%
+G-Mean     |   0.8903 |   0.8787 |   0.8728 |      0.8903 |     +0.00% |     +1.32% |     +2.01%
+AUC        |   0.9243 |   0.9154 |   0.9228 |      0.9206 |     -0.40% |     +0.56% |     -0.24%
+==================================================================================================================================
+Running: ecoli2.dat (5% Noise) | Shape: (336, 7)
+
+========================================================================================================================
+  Dataset: ecoli2.dat (5% Noise)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.7368, G-Mean=0.8903
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.6667, G-Mean=0.8669
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.7000, G-Mean=0.8787
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.667
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+✓ F1=0.7368, G-Mean=0.8903
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.8750 |   0.8750 |   0.8750 |      0.8750 |     +0.00% |     +0.00% |     +0.00%
+Precision  |   0.6364 |   0.5385 |   0.5833 |      0.6364 |     +0.00% |    +18.18% |     +9.09%
+F1         |   0.7368 |   0.6667 |   0.7000 |      0.7368 |     +0.00% |    +10.53% |     +5.26%
+G-Mean     |   0.8903 |   0.8669 |   0.8787 |      0.8903 |     +0.00% |     +2.70% |     +1.32%
+AUC        |   0.9272 |   0.9081 |   0.9287 |      0.9199 |     -0.79% |     +1.30% |     -0.95%
+==================================================================================================================================
+Running: ecoli2.dat (10% Noise) | Shape: (336, 7)
+
+========================================================================================================================
+  Dataset: ecoli2.dat (10% Noise)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.7179, G-Mean=0.8845
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.6829, G-Mean=0.8728
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.6667, G-Mean=0.8669
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.667
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+✓ F1=0.7568, G-Mean=0.8961
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.8750 |   0.8750 |   0.8750 |      0.8750 |     +0.00% |     +0.00% |     +0.00%
+Precision  |   0.6087 |   0.5600 |   0.5385 |      0.6667 |     +9.52% |    +19.05% |    +23.81%
+F1         |   0.7179 |   0.6829 |   0.6667 |      0.7568 |     +5.41% |    +10.81% |    +13.51%
+G-Mean     |   0.8845 |   0.8728 |   0.8669 |      0.8961 |     +1.31% |     +2.67% |     +3.37%
+AUC        |   0.9309 |   0.9169 |   0.9331 |      0.9243 |     -0.71% |     +0.80% |     -0.95%
+==================================================================================================================================
+Running: mammography.csv (Original) | Shape: (11183, 6)
+
+========================================================================================================================
+  Dataset: mammography.csv (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.3130, G-Mean=0.9142
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.2824, G-Mean=0.9171
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.2016, G-Mean=0.8833
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5332/7464 samples in 5.9s
+             Rejected: 0 (quality control)
+✓ F1=0.6300, G-Mean=0.8906
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.9231 |   0.9487 |   0.9487 |      0.8077 |    -12.50% |    -14.86% |    -14.86%
+Precision  |   0.1885 |   0.1659 |   0.1128 |      0.5164 |   +173.98% |   +211.23% |   +357.78%
+F1         |   0.3130 |   0.2824 |   0.2016 |      0.6300 |   +101.25% |   +123.05% |   +212.45%
+G-Mean     |   0.9142 |   0.9171 |   0.8833 |      0.8906 |     -2.58% |     -2.89% |     +0.82%
+AUC        |   0.9529 |   0.9481 |   0.9504 |      0.9601 |     +0.76% |     +1.26% |     +1.02%
+==================================================================================================================================
+Running: page-blocks0.dat (Original) | Shape: (5472, 10)
+
+========================================================================================================================
+  Dataset: page-blocks0.dat (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.7368, G-Mean=0.9257
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.6916, G-Mean=0.9234
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.6400, G-Mean=0.9172
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.600
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.1s
+             Rejected: 0 (quality control)
+✓ F1=0.7586, G-Mean=0.9017
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.9167 |   0.9345 |   0.9524 |      0.8512 |     -7.14% |     -8.92% |    -10.62%
+Precision  |   0.6160 |   0.5490 |   0.4819 |      0.6842 |    +11.07% |    +24.64% |    +41.97%
+F1         |   0.7368 |   0.6916 |   0.6400 |      0.7586 |     +2.96% |     +9.69% |    +18.53%
+G-Mean     |   0.9257 |   0.9234 |   0.9172 |      0.9017 |     -2.59% |     -2.35% |     -1.69%
+AUC        |   0.9573 |   0.9571 |   0.9602 |      0.9446 |     -1.32% |     -1.30% |     -1.62%
+==================================================================================================================================
+Running: ecoli-0-1-4-6_vs_5.dat (Original) | Shape: (280, 6)
+
+========================================================================================================================
+  Dataset: ecoli-0-1-4-6_vs_5.dat (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.5882, G-Mean=0.8771
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.6250, G-Mean=0.8831
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.5263, G-Mean=0.8648
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.750
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+✓ F1=0.6667, G-Mean=0.8892
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.8333 |   0.8333 |   0.8333 |      0.8333 |     +0.00% |     +0.00% |     +0.00%
+Precision  |   0.4545 |   0.5000 |   0.3846 |      0.5556 |    +22.22% |    +11.11% |    +44.44%
+F1         |   0.5882 |   0.6250 |   0.5263 |      0.6667 |    +13.33% |     +6.67% |    +26.67%
+G-Mean     |   0.8771 |   0.8831 |   0.8648 |      0.8892 |     +1.38% |     +0.68% |     +2.82%
+AUC        |   0.8248 |   0.9103 |   0.8162 |      0.9231 |    +11.92% |     +1.41% |    +13.09%
+==================================================================================================================================
+Running: haberman.data (Original) | Shape: (306, 3)
+
+========================================================================================================================
+  Dataset: haberman.data (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.2791, G-Mean=0.4497
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.3704, G-Mean=0.5423
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.4000, G-Mean=0.5645
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 28/100 samples in 0.1s
+             Rejected: 0 (quality control)
+✓ F1=0.3256, G-Mean=0.4901
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.2500 |   0.4167 |   0.4167 |      0.2917 |    +16.67% |    -30.00% |    -30.00%
+Precision  |   0.3158 |   0.3333 |   0.3846 |      0.3684 |    +16.67% |    +10.53% |     -4.21%
+F1         |   0.2791 |   0.3704 |   0.4000 |      0.3256 |    +16.67% |    -12.09% |    -18.60%
+G-Mean     |   0.4497 |   0.5423 |   0.5645 |      0.4901 |     +8.99% |     -9.63% |    -13.18%
+AUC        |   0.5849 |   0.5463 |   0.5659 |      0.6106 |     +4.40% |    +11.78% |     +7.90%
+==================================================================================================================================
+Running: yeast-2_vs_4.dat (Original) | Shape: (514, 8)
+
+========================================================================================================================
+  Dataset: yeast-2_vs_4.dat (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.6512, G-Mean=0.9165
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.5714, G-Mean=0.8944
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.5652, G-Mean=0.8690
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.000 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 216/287 samples in 0.3s
+             Rejected: 0 (quality control)
+✓ F1=0.7879, G-Mean=0.9142
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.9333 |   0.9333 |   0.8667 |      0.8667 |     -7.14% |     -7.14% |     +0.00%
+Precision  |   0.5000 |   0.4118 |   0.4194 |      0.7222 |    +44.44% |    +75.40% |    +72.22%
+F1         |   0.6512 |   0.5714 |   0.5652 |      0.7879 |    +21.00% |    +37.88% |    +39.39%
+G-Mean     |   0.9165 |   0.8944 |   0.8690 |      0.9142 |     -0.26% |     +2.21% |     +5.19%
+AUC        |   0.9610 |   0.9576 |   0.9514 |      0.9576 |     -0.35% |     -0.00% |     +0.65%
+==================================================================================================================================
+Running: led7digit-0-2-4-5-6-7-8-9_vs_1.dat (Original) | Shape: (443, 7)
+
+========================================================================================================================
+  Dataset: led7digit-0-2-4-5-6-7-8-9_vs_1.dat (Original)
+========================================================================================================================
+
+[SMOTE]
+--------------------------------------------------------------------------------
+✓ F1=0.4865, G-Mean=0.8392
+
+[BSM]
+--------------------------------------------------------------------------------
+✓ F1=0.4737, G-Mean=0.8351
+
+[ADASYN]
+--------------------------------------------------------------------------------
+✓ F1=0.4737, G-Mean=0.8351
+
+[Causal-DGS]
+--------------------------------------------------------------------------------
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.769
+  [Decision] CAUSAL mode (fixed weight=0.30)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+✓ F1=0.6667, G-Mean=0.8782
+
+==================================================================================================================================
+COMPARATIVE RESULTS
+==================================================================================================================================
+Metric     |    SMOTE |      BSM |   ADASYN |  Causal-DGS |   vs SMOTE |     vs BSM |  vs ADASYN
+----------------------------------------------------------------------------------------------------------------------------------
+Recall     |   0.8182 |   0.8182 |   0.8182 |      0.8182 |     +0.00% |     +0.00% |     +0.00%
+Precision  |   0.3462 |   0.3333 |   0.3333 |      0.5625 |    +62.50% |    +68.75% |    +68.75%
+F1         |   0.4865 |   0.4737 |   0.4737 |      0.6667 |    +37.04% |    +40.74% |    +40.74%
+G-Mean     |   0.8392 |   0.8351 |   0.8351 |      0.8782 |     +4.65% |     +5.16% |     +5.16%
+AUC        |   0.9367 |   0.9463 |   0.9270 |      0.9344 |     -0.24% |     -1.26% |     +0.80%
+==================================================================================================================================
+
+================================================================================
+✅ ALL EXPERIMENTS COMPLETED!
+================================================================================
+
+######## CELL 17 ########
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.889
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.875
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.778
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.833
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.889
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 155/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.714
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.700
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.364 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.455 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 163/163 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5914/7464 samples in 6.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5555/7464 samples in 5.8s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5525/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5426/7464 samples in 5.9s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.833
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5583/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5850/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.900
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5344/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5558/7464 samples in 6.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.833
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5857/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 5505/7464 samples in 6.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.895
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.741
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.968
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.882
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.833
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.828
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.906
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.750
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.867
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.897
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 3048/3048 samples in 3.0s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.800
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 149/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.600 < 0.700
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 164/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 163/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.800
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.500 < 0.700
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.800
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.750
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.750
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 168/168 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 20/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 45/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 8/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 11/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 41/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 25/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 27/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 17/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 13/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: No edges detected
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 39/100 samples in 0.1s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.857
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 287/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.727
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 287/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 287/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.833
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 278/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.889
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 255/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.250 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 198/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.667
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 249/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.727
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 238/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.111 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 243/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.714
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 261/287 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 254/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.923
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✗ Unreliable: Unstable: 0.583 < 0.600
+  [Decision] Pure DGS-SMOTE (causal structure unreliable)
+  [Generated] 258/258 samples in 0.2s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.917
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.786
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=1.000
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.846
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.818
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+  [Step 1] Causal discovery with reliability assessment...
+  [Discovery] ✓ VALIDATED: stability=0.923
+  [Decision] CAUSAL mode (fixed weight=1.00)
+             Principled approach: preserving discovered causal structure
+  [Generated] 258/258 samples in 0.3s
+             Rejected: 0 (quality control)
+
+MEAN ± STD OVER 10 SPLITS
+ecoli-0-1-4-6_vs_5                 ADASYN      Recall 0.817±0.183  Precision 0.454±0.165  F1 0.549±0.101  G-Mean 0.851±0.087  AUC 0.862±0.083  AP 0.679±0.174  MinorityShare 0.500±0.001
+ecoli-0-1-4-6_vs_5                 BSM         Recall 0.783±0.137  Precision 0.577±0.166  F1 0.639±0.102  G-Mean 0.855±0.068  AUC 0.899±0.073  AP 0.779±0.144  MinorityShare 0.457±0.136
+ecoli-0-1-4-6_vs_5                 Causal-DGS  Recall 0.817±0.146  Precision 0.700±0.138  F1 0.738±0.089  G-Mean 0.886±0.079  AUC 0.918±0.070  AP 0.819±0.122  MinorityShare 0.496±0.009
+ecoli-0-1-4-6_vs_5                 None        Recall 0.833±0.157  Precision 0.500±0.157  F1 0.597±0.095  G-Mean 0.870±0.074  AUC 0.869±0.078  AP 0.689±0.170  MinorityShare 0.071±0.000
+ecoli-0-1-4-6_vs_5                 SMOTE       Recall 0.817±0.183  Precision 0.568±0.122  F1 0.648±0.087  G-Mean 0.872±0.097  AUC 0.877±0.086  AP 0.767±0.151  MinorityShare 0.500±0.000
+ecoli2                             ADASYN      Recall 0.925±0.077  Precision 0.566±0.093  F1 0.697±0.077  G-Mean 0.889±0.044  AUC 0.949±0.026  AP 0.862±0.064  MinorityShare 0.498±0.003
+ecoli2                             BSM         Recall 0.925±0.077  Precision 0.514±0.128  F1 0.649±0.100  G-Mean 0.863±0.051  AUC 0.944±0.021  AP 0.851±0.062  MinorityShare 0.500±0.000
+ecoli2                             Causal-DGS  Recall 0.925±0.071  Precision 0.695±0.083  F1 0.791±0.065  G-Mean 0.922±0.039  AUC 0.952±0.030  AP 0.866±0.053  MinorityShare 0.499±0.003
+ecoli2                             None        Recall 0.931±0.062  Precision 0.658±0.084  F1 0.769±0.066  G-Mean 0.918±0.036  AUC 0.953±0.027  AP 0.872±0.050  MinorityShare 0.153±0.000
+ecoli2                             SMOTE       Recall 0.919±0.066  Precision 0.660±0.081  F1 0.766±0.064  G-Mean 0.913±0.037  AUC 0.953±0.029  AP 0.874±0.048  MinorityShare 0.500±0.000
+haberman                           ADASYN      Recall 0.562±0.084  Precision 0.424±0.052  F1 0.482±0.058  G-Mean 0.638±0.050  AUC 0.677±0.056  AP 0.450±0.077  MinorityShare 0.506±0.013
+haberman                           BSM         Recall 0.550±0.081  Precision 0.405±0.067  F1 0.463±0.060  G-Mean 0.621±0.050  AUC 0.657±0.057  AP 0.438±0.079  MinorityShare 0.500±0.000
+haberman                           Causal-DGS  Recall 0.458±0.124  Precision 0.449±0.077  F1 0.448±0.088  G-Mean 0.599±0.079  AUC 0.673±0.053  AP 0.453±0.079  MinorityShare 0.340±0.036
+haberman                           None        Recall 0.508±0.098  Precision 0.440±0.060  F1 0.470±0.069  G-Mean 0.623±0.060  AUC 0.674±0.056  AP 0.449±0.078  MinorityShare 0.266±0.000
+haberman                           SMOTE       Recall 0.525±0.079  Precision 0.443±0.071  F1 0.477±0.060  G-Mean 0.630±0.049  AUC 0.662±0.053  AP 0.445±0.080  MinorityShare 0.500±0.000
+led7digit-0-2-4-5-6-7-8-9_vs_1     ADASYN      Recall 0.845±0.122  Precision 0.405±0.067  F1 0.539±0.042  G-Mean 0.860±0.050  AUC 0.943±0.027  AP 0.664±0.096  MinorityShare 0.500±0.004
+led7digit-0-2-4-5-6-7-8-9_vs_1     BSM         Recall 0.845±0.086  Precision 0.405±0.117  F1 0.541±0.113  G-Mean 0.861±0.056  AUC 0.929±0.039  AP 0.636±0.148  MinorityShare 0.500±0.000
+led7digit-0-2-4-5-6-7-8-9_vs_1     Causal-DGS  Recall 0.836±0.094  Precision 0.677±0.119  F1 0.743±0.085  G-Mean 0.895±0.052  AUC 0.955±0.023  AP 0.745±0.100  MinorityShare 0.500±0.001
+led7digit-0-2-4-5-6-7-8-9_vs_1     None        Recall 0.891±0.072  Precision 0.372±0.033  F1 0.524±0.039  G-Mean 0.876±0.034  AUC 0.955±0.020  AP 0.706±0.097  MinorityShare 0.084±0.000
+led7digit-0-2-4-5-6-7-8-9_vs_1     SMOTE       Recall 0.845±0.105  Precision 0.475±0.097  F1 0.597±0.062  G-Mean 0.873±0.042  AUC 0.953±0.023  AP 0.717±0.097  MinorityShare 0.500±0.000
+mammography                        ADASYN      Recall 0.879±0.032  Precision 0.110±0.008  F1 0.196±0.012  G-Mean 0.855±0.015  AUC 0.916±0.013  AP 0.456±0.071  MinorityShare 0.500±0.001
+mammography                        BSM         Recall 0.860±0.030  Precision 0.166±0.032  F1 0.276±0.041  G-Mean 0.877±0.011  AUC 0.918±0.014  AP 0.454±0.079  MinorityShare 0.500±0.000
+mammography                        Causal-DGS  Recall 0.731±0.042  Precision 0.460±0.023  F1 0.563±0.017  G-Mean 0.846±0.023  AUC 0.911±0.016  AP 0.609±0.036  MinorityShare 0.431±0.008
+mammography                        None        Recall 0.824±0.035  Precision 0.169±0.006  F1 0.281±0.008  G-Mean 0.863±0.016  AUC 0.912±0.014  AP 0.527±0.053  MinorityShare 0.023±0.000
+mammography                        SMOTE       Recall 0.822±0.036  Precision 0.172±0.007  F1 0.284±0.009  G-Mean 0.862±0.017  AUC 0.913±0.015  AP 0.520±0.063  MinorityShare 0.500±0.000
+page-blocks0                       ADASYN      Recall 0.954±0.015  Precision 0.455±0.023  F1 0.616±0.023  G-Mean 0.910±0.010  AUC 0.960±0.007  AP 0.768±0.027  MinorityShare 0.500±0.001
+page-blocks0                       BSM         Recall 0.930±0.027  Precision 0.500±0.027  F1 0.650±0.025  G-Mean 0.911±0.014  AUC 0.958±0.007  AP 0.772±0.023  MinorityShare 0.500±0.000
+page-blocks0                       Causal-DGS  Recall 0.829±0.035  Precision 0.647±0.034  F1 0.726±0.028  G-Mean 0.886±0.019  AUC 0.951±0.010  AP 0.815±0.023  MinorityShare 0.500±0.000
+page-blocks0                       None        Recall 0.895±0.023  Precision 0.572±0.023  F1 0.698±0.021  G-Mean 0.909±0.013  AUC 0.959±0.008  AP 0.809±0.022  MinorityShare 0.102±0.000
+page-blocks0                       SMOTE       Recall 0.895±0.021  Precision 0.574±0.025  F1 0.699±0.023  G-Mean 0.909±0.012  AUC 0.959±0.010  AP 0.809±0.022  MinorityShare 0.500±0.000
+yeast-2_vs_4                       ADASYN      Recall 0.867±0.094  Precision 0.452±0.081  F1 0.586±0.053  G-Mean 0.872±0.040  AUC 0.941±0.030  AP 0.805±0.053  MinorityShare 0.500±0.003
+yeast-2_vs_4                       BSM         Recall 0.833±0.148  Precision 0.478±0.141  F1 0.582±0.053  G-Mean 0.853±0.058  AUC 0.927±0.047  AP 0.798±0.069  MinorityShare 0.500±0.000
+yeast-2_vs_4                       Causal-DGS  Recall 0.740±0.115  Precision 0.666±0.091  F1 0.693±0.074  G-Mean 0.839±0.067  AUC 0.931±0.051  AP 0.801±0.080  MinorityShare 0.476±0.025
+yeast-2_vs_4                       None        Recall 0.853±0.125  Precision 0.501±0.067  F1 0.624±0.052  G-Mean 0.876±0.059  AUC 0.939±0.041  AP 0.801±0.062  MinorityShare 0.100±0.000
+yeast-2_vs_4                       SMOTE       Recall 0.833±0.119  Precision 0.525±0.085  F1 0.635±0.057  G-Mean 0.870±0.057  AUC 0.939±0.039  AP 0.803±0.060  MinorityShare 0.500±0.000
+
+PAIRED WILCOXON: Causal-DGS vs each method (p-value, +/- = Causal-DGS mean higher/lower)
+ecoli-0-1-4-6_vs_5                 vs None    F1 +0.012  Recall -0.317  G-Mean +0.161  AP +0.002
+ecoli-0-1-4-6_vs_5                 vs SMOTE   F1 +0.012  Recall -1.000  G-Mean +0.123  AP +0.008
+ecoli-0-1-4-6_vs_5                 vs BSM     F1 +0.018  Recall +0.180  G-Mean +0.018  AP +0.051
+ecoli-0-1-4-6_vs_5                 vs ADASYN  F1 +0.008  Recall -1.000  G-Mean +0.028  AP +0.002
+ecoli2                             vs None    F1 +0.027  Recall -0.564  G-Mean +0.322  AP -0.625
+ecoli2                             vs SMOTE   F1 +0.002  Recall +0.317  G-Mean +0.002  AP -0.131
+ecoli2                             vs BSM     F1 +0.002  Recall -1.000  G-Mean +0.010  AP +0.322
+ecoli2                             vs ADASYN  F1 +0.002  Recall -1.000  G-Mean +0.010  AP +0.770
+haberman                           vs None    F1 -0.275  Recall -0.046  G-Mean -0.275  AP +0.432
+haberman                           vs SMOTE   F1 -0.160  Recall -0.017  G-Mean -0.051  AP +0.193
+haberman                           vs BSM     F1 -0.625  Recall -0.017  G-Mean -0.275  AP +0.037
+haberman                           vs ADASYN  F1 -0.105  Recall -0.011  G-Mean -0.064  AP +0.695
+led7digit-0-2-4-5-6-7-8-9_vs_1     vs None    F1 +0.002  Recall -0.039  G-Mean +0.131  AP +0.027
+led7digit-0-2-4-5-6-7-8-9_vs_1     vs SMOTE   F1 +0.014  Recall -0.564  G-Mean +0.027  AP +0.038
+led7digit-0-2-4-5-6-7-8-9_vs_1     vs BSM     F1 +0.006  Recall -0.564  G-Mean +0.027  AP +0.002
+led7digit-0-2-4-5-6-7-8-9_vs_1     vs ADASYN  F1 +0.004  Recall -0.888  G-Mean +0.010  AP +0.002
+mammography                        vs None    F1 +0.002  Recall -0.002  G-Mean -0.004  AP +0.002
+mammography                        vs SMOTE   F1 +0.002  Recall -0.002  G-Mean -0.064  AP +0.002
+mammography                        vs BSM     F1 +0.002  Recall -0.002  G-Mean -0.002  AP +0.002
+mammography                        vs ADASYN  F1 +0.002  Recall -0.002  G-Mean -0.375  AP +0.002
+page-blocks0                       vs None    F1 +0.002  Recall -0.002  G-Mean -0.002  AP +0.160
+page-blocks0                       vs SMOTE   F1 +0.002  Recall -0.002  G-Mean -0.002  AP +0.193
+page-blocks0                       vs BSM     F1 +0.002  Recall -0.002  G-Mean -0.014  AP +0.002
+page-blocks0                       vs ADASYN  F1 +0.002  Recall -0.002  G-Mean -0.004  AP +0.002
+yeast-2_vs_4                       vs None    F1 +0.006  Recall -0.007  G-Mean -0.014  AP +0.846
+yeast-2_vs_4                       vs SMOTE   F1 +0.064  Recall -0.018  G-Mean -0.105  AP -0.922
+yeast-2_vs_4                       vs BSM     F1 +0.010  Recall -0.011  G-Mean -0.260  AP +0.922
+yeast-2_vs_4                       vs ADASYN  F1 +0.014  Recall -0.008  G-Mean -0.105  AP -1.000
